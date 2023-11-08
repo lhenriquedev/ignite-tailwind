@@ -1,11 +1,12 @@
 import * as FileInput from '@/components/Form/FileInput'
 
-import { ChevronDown, Mail } from 'lucide-react'
+import { Bold, ChevronDown, Italic, Link, List, ListOrdered, Mail } from 'lucide-react'
 import { InputControl, InputPrefix, InputRoot } from '@/components/Input'
 
 import { Select } from '@/components/Form/Select'
 import { SelectItem } from '@/components/Form/Select/SelectItem'
 import { SettingsTabs } from '@/components/SettingsTabs'
+import { TextArea } from '@/components/Form/TextArea'
 
 export default function Home() {
   return (
@@ -161,7 +162,70 @@ export default function Home() {
                 Write a short introduction.
               </span>
             </label>
-            <div></div>
+            <div className='space-y-3'>
+              <div className='grid gap-3 grid-cols-2'>
+                <Select
+                  placeholder='Select a timezone'
+                  defaultValue='normal'>
+                  <SelectItem
+                    value='normal'
+                    text='Normal Text'
+                  />
+                  <SelectItem
+                    value='md'
+                    text='Markdown'
+                  />
+                </Select>
+
+                <div className='flex items-center gap-1'>
+                  <button
+                    type='button'
+                    className='-2 hover:bg-zinc-50 rounded-full'>
+                    <Bold
+                      className='h-4 w-5 text-zinc-500'
+                      strokeWidth={3}
+                    />
+                  </button>
+                  <button
+                    type='button'
+                    className='-2 hover:bg-zinc-50 rounded-full'>
+                    <Italic
+                      className='h-4 w-5 text-zinc-500'
+                      strokeWidth={3}
+                    />
+                  </button>
+                  <button
+                    type='button'
+                    className='-2 hover:bg-zinc-50 rounded-full'>
+                    <Link
+                      className='h-4 w-5 text-zinc-500'
+                      strokeWidth={3}
+                    />
+                  </button>
+                  <button
+                    type='button'
+                    className='-2 hover:bg-zinc-50 rounded-full'>
+                    <List
+                      className='h-4 w-5 text-zinc-500'
+                      strokeWidth={3}
+                    />
+                  </button>
+                  <button
+                    type='button'
+                    className='-2 hover:bg-zinc-50 rounded-full'>
+                    <ListOrdered
+                      className='h-4 w-5 text-zinc-500'
+                      strokeWidth={3}
+                    />
+                  </button>
+                </div>
+              </div>
+
+              <TextArea
+                id='bio'
+                defaultValue='Iam a Frontend Developer'
+              />
+            </div>
           </div>
 
           <div className='grid gap-3 grid-cols-form pt-5'>
